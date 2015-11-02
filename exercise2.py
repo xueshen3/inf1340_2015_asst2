@@ -14,13 +14,20 @@ __license__ = "MIT License"
 
 def find(input_string, substring, start, end):
     """
-    Describe your function
+    The function would use a for loop to do letter by letter comparison that behave exactly like a string function
 
     :param :
     :return:
     :raises:
 
     """
+    string = input_string[start:end+1]
+    index = 0
+    for character in string:
+        if character == substring[0]:
+            if string[index: index+len(substring)] == substring:
+                return True
+        index += 1
     return -1
 
 
