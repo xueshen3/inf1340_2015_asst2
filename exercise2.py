@@ -40,7 +40,26 @@ def multi_find(input_string, substring, start, end):
     :raises:
 
     """
-    result = ""
+    return_str = ''
+    input_index = 0
 
-    return result
+    # store the return value by find function
+    index = find(input_string, substring,start,end)
+    if index == -1:
+        return return_str
+    else:
+        return_str += (', ' + str(index))
+        new_string = input_string[index+len(substring):]
+        while len(new_string) > len(substring):
+            index = find(new_string, substring,start,end)
+            if index == -1:
+                return return_str[2:]
+            else:
+                input_index = input_index + index
+                new_string = new_string[index+len(substring):]
+                input_index += len(substring)
+                return_str += ', ' + str(input_index)
+        return return_str[2:]
+
+print(multi_find('abadfabasdababfsdfasdfaab','ab',0,30))
 
