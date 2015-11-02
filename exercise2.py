@@ -33,7 +33,7 @@ def find(input_string, substring, start, end):
 
 def multi_find(input_string, substring, start, end):
     """
-    Describe your function
+    The application of multi string function
 
     :param :
     :return:
