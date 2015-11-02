@@ -11,32 +11,9 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
-# User enters a English word to be translated into Pig Latin.
-word = raw_input("Enter an English word and press ENTER: ")
-
-def pig_latinify(word):
-
-    # Identify a local variable for vowels.
-    vowels = ["a", "e", "i", "o", "u"]
-
-    # Identify a local variable for vowels.
-    consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l",
-              "m", "n", "p", "q", "r", "s", "t", "v", "w",
-              "x", "z"]
-
-    # Assigns the appropriate suffix depending if it is a vowel or consonant
-    vowel_pig = "yay"
-    consonant_pig = "ay"
-
-
-    # If input word has vowel, it will add "yay" to the end
-    if word[0] in vowels:
-        print word + vowel_pig
-
-    # If input word begins with 1 consonant, it will add it to the end with "ay"
-    elif word[0] in consonants:
-        print word[1:] + word[0] + consonant_pig
-
+# identify the five vowel
+vowel = "aeiou"
+def pig_latinify():
     """
     Describe your function
 
@@ -45,9 +22,18 @@ def pig_latinify(word):
     :raises:
 
     """
-    """
-    result = ""
-
-    return result
-    """
-pig_latinify(word)
+    # ask user for input of a English word
+    word = raw_input("Please enter a English word")
+    # if the first letter is vowel, it should return the user word append "yay"
+    if word[0] in vowel:
+        word = word.lower()
+        print (word + "yay")
+    #the enter of string index
+    index = 0
+    #use for loop to find the first vowel in the word
+    for element in word:
+        if element in vowel:
+    #if the word contains multiple consonant, put all of them up to the first vowel to the end with append "ay"
+            print (word[index:]+word[0:index] + "ay")
+#last but not the least,  call the function
+pig_latinify()
