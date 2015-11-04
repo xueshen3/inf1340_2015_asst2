@@ -14,20 +14,48 @@ __license__ = "MIT License"
 
 from exercise1 import pig_latinify
 
-
 def test_basic():
     """
     Basic test cases from assignment hand out
     """
-    assert pig_latinify("dog") == "ogday"
-    assert pig_latinify("scratch") == "atchscray"
-    assert pig_latinify("is") == "isyay"
-    assert pig_latinify("apple") == "appleyay"
+    for item in pig_latinify("dog"):
+        assert pig_latinify("dog") == "ogday"
 
-    #additional test cases with different varieties
-    assert pig_latinify("ddog") == "ogdday"
-    assert pig_latinify("enterprise") == "enterpriseyay"
-    assert pig_latinify("school") == "oolschay"
-    assert pig_latinify("calculator") == "alculatorcay"
-    assert pig_latinify("clock") == "ockclay"
+def test_three_consonants():
 
+    for item in pig_latinify("scratch"):
+        assert pig_latinify("scratch") == "atchscray"
+
+def test_vowel_first():
+
+    for item in pig_latinify("is"):
+        assert pig_latinify("is") == "isyay"
+
+def test_other_word():
+    for item in pig_latinify("apple"):
+        assert pig_latinify("apple") == "appleyay"
+
+# additional test cases with different varieties
+def test_double_dog():
+    for item in pig_latinify("ddog"):
+        assert pig_latinify("ddog") == "ogdday"
+
+def test_enterprise():
+    for item in pig_latinify("enterprise"):
+        assert pig_latinify("enterprise") == "enterpriseyay"
+
+def test_three_consonants_again():
+    for item in pig_latinify("school"):
+        assert pig_latinify("school") == "oolschay"
+
+def test_calculator():
+    for item in pig_latinify("calculator"):
+        assert pig_latinify("calculator") == "alculatorcay"
+
+def test_clock():
+    for item in pig_latinify("clock"):
+        assert pig_latinify("clock") == "ockclay"
+
+def test_synchronize():
+    for item in pig_latinify("synchronize"):
+        assert pig_latinify("synchronize") == "onizesynchray"
