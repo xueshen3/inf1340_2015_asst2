@@ -24,14 +24,16 @@ def pig_latinify(word):
     """
 
     # Identify a local variable for vowels.
-    vowels = ["a", "e", "i", "o", "u"]
+    vowels = "aeiou"
 
-    # Assigns the appropriate suffix depending if it is a vowel or consonant
+    # Assigns the appropriate suffix value appropriate to a vowel or consonant
     vowel_pig = "yay"
     consonant_pig = "ay"
 
+    # Variable that assigns a string value
     pig_word = ""
 
+    # Variable that assigns the beginning of an indexing count
     index = 0
     first_vowel = -1
 
@@ -39,22 +41,24 @@ def pig_latinify(word):
     # Check each letter until it reaches a vowel
     for letter in word:
         if letter in vowels:
-            # figure out how to stop counting once it reaches a vowel
             first_vowel = index
             break
         index += 1
 
-        # Part 2: Make the new word
+    # Part 2: Make the new word
+    # If no vowel is found, then the function attaches "ay" to the end of the word
     if first_vowel == -1:
-            # no vowel was found
         pig_word = word + consonant_pig
+    # If the first letter is a vowel, then the function attaches "yay" to the end of the word.
     elif first_vowel == 0:
         pig_word = word + vowel_pig
+    # The function gathers words beginning with consonants, appends them to the end, and adds "ay".
     else:
         pig_word = word[first_vowel:] + word[0:first_vowel] + consonant_pig
 
+    # Print word translated into pig latin
     print pig_word
 
     return pig_word
 
-pig_latinify("word")
+# pig_latinify("word")
