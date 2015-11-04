@@ -15,11 +15,12 @@ __license__ = "MIT License"
 def pig_latinify(word):
 
     """
-    Describe your function
+    This function will translate an English word into pig latin. If the word begins with a vowel, it will add "yay" to
+    the end of word while words beginning with consonants will append to the end and "ay" will be ended to the end.
 
-    :param :
-    :return:
-    :raises:
+    :param : 
+    :return: The function will return a word translated into pig latin.
+    :raises: A error will be raised if anything but a string is input into the function.
 
     """
 
