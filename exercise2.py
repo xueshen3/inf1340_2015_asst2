@@ -14,10 +14,10 @@ __license__ = "MIT License"
 
 def find(input_string, substring, start, end):
     """
-    The function would use a for loop to do letter by letter comparison that behave exactly like a string function
-
-    :param :
-    :return:
+    The application of input string, allowing the user to find the location of the substring in the input_string.
+    The function would use a for loop to do letter by letter comparison that behave exactly like a string function.
+    :Param:The input_string and the substring where users want to find in the input_string, along with the range in input_string :
+    :return:The user will get the location of the substring in the form of index.
     :raises:
 
     """
@@ -26,32 +26,32 @@ def find(input_string, substring, start, end):
     for character in string:
         if character == substring[0]:
             if string[index: index+len(substring)] == substring:
-                return True
+                return string.find(substring)
         index += 1
-    return -1
-
+    else:
+        return -1
+print(find("assignment","ssign",0,9))
 
 def multi_find(input_string, substring, start, end):
     """
-    The application of multi string function
-
-    :param :
-    :return:
+    The application of multi string function, the function allow users to find all the location where substring is found
+    :The input_string, substring, and the range of the function in the input_string eg("aaadgdaaadgd", "dgd", 0, 11) :
+    :It shall return the indexes of the substring in the input string, eg( 3, 9):
     :raises:
 
     """
-    return_str = ''
+    return_str = " "
     input_index = 0
 
     # store the return value by find function
-    index = find(input_string, substring,start,end)
+    index = find(input_string, substring, start, end)
     if index == -1:
         return return_str
     else:
         return_str += (', ' + str(index))
         new_string = input_string[index+len(substring):]
         while len(new_string) > len(substring):
-            index = find(new_string, substring,start,end)
+            index = find(new_string, substring, start, end)
             if index == -1:
                 return return_str[2:]
             else:
@@ -61,5 +61,5 @@ def multi_find(input_string, substring, start, end):
                 return_str += ', ' + str(input_index)
         return return_str[2:]
 
-print(multi_find('abadfabasdababfsdfasdfaab','ab',0,30))
+print(multi_find('substringtriabctriabc','tri',0,20))
 
