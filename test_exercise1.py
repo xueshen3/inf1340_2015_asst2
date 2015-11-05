@@ -59,3 +59,5 @@ def test_clock():
 def test_synchronize():
     for item in pig_latinify("synchronize"):
         assert pig_latinify("synchronize") == "onizesynchray"
+
+

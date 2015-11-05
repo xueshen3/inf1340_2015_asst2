@@ -14,6 +14,7 @@ __license__ = "MIT License"
 
 GRADUATES = [["Number", "Surname", "Age"], [7274, "Robinson", 37], [7432, "O'Malley", 39],[9824, "Darkes", 38]]
 GRADUATES1 = [["Number", "Surname", "Age"],[7474, "Robinson", 37],[7432, "O'Malley", 39],[9824, "Darkes", 38]]
+GRADUATES2 = [["Number", "Surname", "Age"],[7474, "Robinson", 37],[7432, "O'Malley", 39],[9824, "Reilly", 38]]
 
 def union(table1, table2):
     """
@@ -23,31 +24,35 @@ def union(table1, table2):
     :param table2: a table (a List of Lists)
     :return: the resulting table
     :raises: MismatchedAttributesException:
-        if tables t1 and t2 don't have the same attributes
+        only if tables t1 and t2 don't have the same attributes
     """
+    # create a new_list to store the value in the table
     new_list = []
-     # check table columns and schema are equal
+     # check if the table columns and the schema are equal
     if table1[0] == table2[0]:
+     # I created a for loop to put the character in the new_list
         for element in table1:
             new_list.append(element)
         for element in table2:
             if element not in new_list:
                 new_list.append(element)
         return new_list
+    # raise the MismatchedAttributes Exception error
     else:
         raise MismatchedAttributesException
-
 
     return []
 
 
 def intersection(table1, table2):
     """
-    Describe your function
+    The function will perform a function to list the intersection row of the two tables
 
     """
     new_list = []
+    # check if the table columns and the schema are equal
     if table1[0] == table2[0]:
+    # I created a for loop to compare if the element in each table are the same
         for element in table1:
             if element in table2:
                 new_list.append(element)
@@ -56,7 +61,6 @@ def intersection(table1, table2):
         raise MismatchedAttributesException
     return []
 
-
 def difference(table1, table2):
     """
     Describe your function
@@ -64,6 +68,7 @@ def difference(table1, table2):
     """
     new_list = []
     if table1[0] == table2[0]:
+        new_list.append(table1[0])
         for element in table1:
             if element not in table2:
                 new_list.append(element)
@@ -72,13 +77,12 @@ def difference(table1, table2):
                 new_list.append(element)
         return new_list
     else:
-            raise MismatchedAttributesException 
+            raise MismatchedAttributesException
     return []
 
-
-#####################
-# HELPER FUNCTIONS ##
-#####################
+########################
+### HELPER FUNCTIONS ###
+########################
 def remove_duplicates(l):
     """
     Removes duplicates from l, where l is a List of Lists.

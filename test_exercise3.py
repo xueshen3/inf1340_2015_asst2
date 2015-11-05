@@ -72,3 +72,13 @@ def test_difference():
               [7274, "Robinson", 37]]
 
     assert is_equal(result, difference(GRADUATES, MANAGERS))
+
+def for_loop():
+    myname = "assignment"
+    for element in myname:
+        print(element)
+
+for_loop()
+
+
+
