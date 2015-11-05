@@ -14,47 +14,44 @@ __license__ = "MIT License"
 
 def find(input_string, substring, start, end):
     """
-    The application of input string, allowing the user to find the location of the substring in the input_string.
-    The function would use a for loop to do letter by letter comparison that behave exactly like a string function.
-    :Param:The input_string and the substring where users want to find in the input_string, along with the range in input_string:
-    :return:The user will get the location of the substring in the form of index.
-    :raises:resulting a error when the input in the form other than string.
+    The application of input string allows the user to find the location of the substring in the input_string.
+    The function would use a for loop to do letter by letter comparison that behaves exactly like a string function.
+    :param:The input_string and the substring are strings. The user wants to find the substring within input_string.
+    :return:The user will get the location of the substring in the form of an integer.
     """
-    # define the string equal to the input_string with slicing from start to the end
-    string = input_string[start:end+1]
+
+    # Assign string equals to the input_string with slicing starting from the beginning to the end.
+    string = input_string[start:]
     index = 0
-    # enter the for loop to compare the letter of the in the string one by one
+
+    # Enter the for loop to compare the letter of the in the string one by one.
     for character in string:
         if character == substring[0]:
-            # the slice of the string is equivalent to the substring
+            # The slice of the string is equal to the substring.
             if string[index: index+len(substring)] == substring:
                 return index
         index += 1
+    # If substring not found within string, return the integer "-1".
     else:
         return -1
 
-print(find("characteristic","ara", 0, 20))
-
 def multi_find(input_string, substring, start, end):
     """
-    The application of multi string function, the function allow users to find all the location where substring is found
-    :The input_string, substring, and the range of the function in the input_string eg("aaadgda", "dgd", 0, 6) :
-    :It shall return the indexes of the substring in the input string, eg( 3):
-    :raises:
-
+    The multi find function allows the user to find all the locations where the substring is found.
+    :param:The input_string, substring, and the range of the function in the input_string eg("aaadgda", "dgd", 0, 6) :
+    :return:It shall return the indexes of the substring in the input string, eg( 3):
     """
-    #set a empty return string to save variables
+    # Set a empty return string to save variables.
     return_str = ""
-    #set a empty input_index to store number
+    # Set a empty input_index to store number.
     input_index = 0
 
-    # store the return value by using find function, wait for user's input
     index = find(input_string, substring, start, end)
-    # apply the function of the first function, if no substring is found in string
+    # If no substring is found in string, return -1
     if index == -1:
-        # if the index doesn't equal to -1, that means there is something found, so enter else condition
-        return -1
+                return -1
 
+    # If the index is not -1, begin locating substring placeholder.
     else:
         # if we found the first match and save the match to return_str
         return_str += (',' + str(index))
