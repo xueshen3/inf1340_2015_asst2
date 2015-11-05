@@ -18,7 +18,7 @@ def find(input_string, substring, start, end):
     The function would use a for loop to do letter by letter comparison that behave exactly like a string function.
     :Param:The input_string and the substring where users want to find in the input_string, along with the range in input_string:
     :return:The user will get the location of the substring in the form of index.
-    :raises:resulting a error when the input in the form other than string
+    :raises:resulting a error when the input in the form other than string.
     """
     # define the string equal to the input_string with slicing from start to the end
     string = input_string[start:end+1]
