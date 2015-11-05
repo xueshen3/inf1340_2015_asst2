@@ -21,7 +21,7 @@ def find(input_string, substring, start, end):
     :raises:resulting a error when the input in the form other than string.
     """
     # define the string equal to the input_string with slicing from start to the end
-    string = input_string[start:end+1]
+    string = input_string[start:]
     index = 0
     # enter the for loop to compare the letter of the in the string one by one
     for character in string:
@@ -33,7 +33,7 @@ def find(input_string, substring, start, end):
     else:
         return -1
 
-print(find("characteristic","ara", 0, 20))
+print(find("characteristic","ara", 0, -1))
 
 def multi_find(input_string, substring, start, end):
     """
@@ -53,13 +53,24 @@ def multi_find(input_string, substring, start, end):
     # apply the function of the first function, if no substring is found in string
     if index == -1:
         # if the index doesn't equal to -1, that means there is something found, so enter else condition
-        return -1
+        return return_str
 
     else:
-        # if we found the first match and save the match to return_str
+
+
+
+
+
+
+
+
+
+
+
+
         return_str += (',' + str(index))
         # set a new_string equal to the rest of the string after the first matching of substring
-        new_string = input_string[index+len(substring):]
+        new_string = input_string[index+len(substring)-1:]
         # while loop condition the remaining string is longer than the substring, if the rest of the string is less than substring, so it's impossible to find matching again
         while len(new_string) > len(substring):
             # let index call the function we defined in part a, but switch input_string with new_string
@@ -77,5 +88,5 @@ def multi_find(input_string, substring, start, end):
         # end the loop with the return when the rest of the string is less than substring
         return return_str[1:]
 
-print(multi_find("ccaccacca", "c", 0, 20))
+print(multi_find("ccaccacca", "cc", 0, 9))
 

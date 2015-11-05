@@ -20,21 +20,31 @@ def test_find_basic():
     """
     assert find("This is an ex-parrot", "parrot", 0, 20) == 14
 
-def test_find_basic():
+def test_advanced_find_basic():
     """
-    Test the find function that will do excatly the same as the find.string method with for loop
+    Test the find function that will do the same as the find.string method with for loop
     """
     assert find("characteristic","ara", 0, 14) == 2
 
-def test_multi_find_basic():
-    """
-    Test the multi find function
-    """
-    assert find("ccaccacca","c",0,8) == "0,1,3,4,6,7"
-
+    # A special situation where the end index is out of range
+    assert find("dominating","min", 0, -1) == 2
 
 def test_multi_find_basic():
     """
     Test multi_find function.
     """
-    assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 20) == "0,4,8,12"
+    assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 15) == "0,4,8,12"
+
+def test_advanced_multi_find_basic():
+    """
+    Test the if the function will find multiple location of the substring in the index
+    """
+    assert find("ccaccacca", "c", 0, 8) == "0,1,3,4,6,7"
+
+
+def test_multi_find_invaild_substring():
+    """
+    Test if the substring is not in the input_string
+    :return: The function should return the user a empty string
+    """
+    assert multi_find("Ni! Ni! Ni! Ni!", "Ha", 0, 15) == ""
