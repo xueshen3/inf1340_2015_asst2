@@ -22,12 +22,19 @@ def test_basic():
     assert pig_latinify("is") == "isyay"
     assert pig_latinify("apple") == "appleyay"
 
-    # Test case for multiple consonants
+
+def test_consonants_y():
+    # Test case with y as a consonant
     assert pig_latinify("synchronize") == "onizesynchray"
+
+def test_same_consonants():
+    # Test case with same consonant repeated
     assert pig_latinify("dday") == "aydday"
 
+def test_no_consonants():
     # Test case for no vowels
     assert pig_latinify("why") == "whyay"
 
+def test_all_vowels():
     # Test case for multiple vowels
     assert pig_latinify("aaa") == "aaayay"
