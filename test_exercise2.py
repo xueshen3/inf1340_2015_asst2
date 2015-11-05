@@ -20,6 +20,18 @@ def test_find_basic():
     """
     assert find("This is an ex-parrot", "parrot", 0, 20) == 14
 
+def test_find_basic():
+    """
+    Test the find function that will do excatly the same as the find.string method with for loop
+    """
+    assert find("characteristic","ara", 0, 14) == 2
+
+def test_multi_find_basic():
+    """
+    Test the multi find function
+    """
+    assert find("ccaccacca","c",0,8) == "0,1,3,4,6,7"
+
 
 def test_multi_find_basic():
     """
