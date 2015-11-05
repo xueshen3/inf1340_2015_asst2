@@ -18,7 +18,7 @@ GRADUATES2 = [["Number", "Surname", "Age"],[7474, "Robinson", 37],[7432, "O'Mall
 
 def union(table1, table2):
     """
-    Perform the union set operation on tables, table1 and table2.
+    The function would perform the union set operation on tables, table1 and table2.
 
     :param table1: a table (a List of Lists)
     :param table2: a table (a List of Lists)
@@ -30,7 +30,7 @@ def union(table1, table2):
     new_list = []
      # check if the table columns and the schema are equal
     if table1[0] == table2[0]:
-     # I created a for loop to put the character in the new_list
+     # I created a for loop to put the character of table 2 in the new_list
         for element in table1:
             new_list.append(element)
         for element in table2:
@@ -46,7 +46,7 @@ def union(table1, table2):
 
 def intersection(table1, table2):
     """
-    The function will perform a function to list the intersection row of the two tables
+    The function will perform a intersection set row of the two tables
 
     """
     new_list = []
@@ -57,25 +57,27 @@ def intersection(table1, table2):
             if element in table2:
                 new_list.append(element)
         return new_list
+    # raise the MismatchedAttributes Exception error
     else:
         raise MismatchedAttributesException
     return []
 
 def difference(table1, table2):
     """
-    Describe your function
-
+    The function will check if the schema of both tables are the same.
+    And it returns a new table that contains all unique rows that appear in the first table but not the second.
     """
     new_list = []
+    # check if the table columns and the schema are equal
     if table1[0] == table2[0]:
+        #I created new_list to store the the value
         new_list.append(table1[0])
         for element in table1:
+            #put the element to new_list if the element in table1 is not in table 2
             if element not in table2:
                 new_list.append(element)
-        for element in table2:
-            if element not in table1:
-                new_list.append(element)
         return new_list
+    # raise the MismatchedAttributes Exception error
     else:
             raise MismatchedAttributesException
     return []

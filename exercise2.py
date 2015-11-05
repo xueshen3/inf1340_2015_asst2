@@ -33,7 +33,7 @@ def find(input_string, substring, start, end):
     else:
         return -1
 
-print(find("assignment","ign",0,9))
+print(find("characteristic","ara", 0, 20))
 
 def multi_find(input_string, substring, start, end):
     """
@@ -52,7 +52,7 @@ def multi_find(input_string, substring, start, end):
     index = find(input_string, substring, start, end)
     # apply the function of the first function, if no substring is found in string
     if index == -1:
-         # if the index doesn't equal to -1, that means there is something found, so enter else condition
+        # if the index doesn't equal to -1, that means there is something found, so enter else condition
         return -1
 
     else:
@@ -60,22 +60,22 @@ def multi_find(input_string, substring, start, end):
         return_str += (',' + str(index))
         # set a new_string equal to the rest of the string after the first matching of substring
         new_string = input_string[index+len(substring):]
-# while loop condition the remaining string is longer than the substring, if the rest of the string is less than substring, so it's impossible to find matching again
+        # while loop condition the remaining string is longer than the substring, if the rest of the string is less than substring, so it's impossible to find matching again
         while len(new_string) > len(substring):
-        # let index call the function we defined in part a, but switch input_string with new_string
+            # let index call the function we defined in part a, but switch input_string with new_string
             index = find(new_string, substring, start, end)
             if index == -1:
-        # we should return the empty string slicing with 1, after ","
+                # we should return the empty string slicing with 1, after ","
                 return return_str[1:]
-        # Another else condition inside the loop
+            # Another else condition inside the loop
             else:
-        # add back the length of the substring back to the index, so we don't count starting from the end of the substring
+    # add back the length of the substring back to the index, so we don't count starting from the end of the substring
                 input_index += index + len(substring)
-        # add back the length of the substring again after previous matching
+                # add back the length of the substring again after previous matching
                 new_string = new_string[index+len(substring):]
                 return_str += ',' + str(input_index)
         # end the loop with the return when the rest of the string is less than substring
         return return_str[1:]
 
-print(multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 20))
+print(multi_find("ccaccacca", "c", 0, 20))
 
