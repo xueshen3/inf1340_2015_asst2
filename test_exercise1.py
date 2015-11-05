@@ -28,15 +28,16 @@ def test_consonants_y():
     assert pig_latinify("synchronize") == "onizesynchray"
     assert pig_latinify("psychology") == "ologypsychay"
 
-def test_same_consonants():
-    # Test case with same consonant repeated
+def test_consonants():
+    # Test case starting with consonants
     assert pig_latinify("dday") == "aydday"
-    assert pig_latinify("hmmm") == "hmmmay"
+    assert pig_latinify("ssnakes") == "akesssnay"
 
 def test_no_consonants():
     # Test case for no vowels
     assert pig_latinify("why") == "whyay"
     assert pig_latinify("try") == "tryay"
+    assert pig_latinify("hmmm") == "hmmmay"
 
 def test_all_vowels():
     # Test case for only vowels
