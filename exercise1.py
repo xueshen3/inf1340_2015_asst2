@@ -58,7 +58,6 @@ def pig_latinify(word):
     else:
          pig_word = word[first_vowel:] + word[0:first_vowel] + consonant_suffix
 
-    print pig_word
-
     return pig_word
 
+# pig_latinify(word)
