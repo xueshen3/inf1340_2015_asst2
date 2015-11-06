@@ -26,8 +26,12 @@ def test_advanced_find_basic():
     """
     assert find("characteristic","ara", 0, 14) == 2
 
-    # A special situation where the end index is out of range
+    # A special situation where the end index is negative number
     assert find("dominating","min", 0, -1) == 2
+
+    # A special siutation where substring is identical as input_string
+
+    assert find("homework","homework", 0, 8) == 0
 
 def test_multi_find_basic():
     """
@@ -39,8 +43,15 @@ def test_advanced_multi_find_basic():
     """
     Test the if the function will find multiple location of the substring in the index
     """
-    assert find("ccaccacca", "c", 0, 8) == "0,1,3,4,6,7"
+    assert multi_find("ccaccacca", "c", 0, 9) == '0,1,3,4,6,7'
 
+    # Test when the ending slice is out of range
+
+    assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 35) == "0,4,8,12"
+
+    # Test when the substring is identical as input_string
+
+    assert multi_find("assignment", "assignment", 0, 9) == '0'
 
 def test_multi_find_invaild_substring():
     """
