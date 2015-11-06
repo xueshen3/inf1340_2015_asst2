@@ -43,3 +43,13 @@ def test_all_vowels():
     # Test case for only vowels
     assert pig_latinify("aaa") == "aaayay"
     assert pig_latinify("eeee") == "eeeeyay"
+
+def test_advanced():
+    # Test in advanced steps
+    assert pig_latinify("anxiety") == "anxietyyay"
+    # Test a word with dash in it
+    assert pig_latinify("sub-string") == "ub-stringsay"
+    # Test a word with special character in it
+    assert pig_latinify("high-five") == "igh-fivehay"
+    # Test a very long word
+    assert pig_latinify("supercalifragilisticexpialidocious") == "upercalifragilisticexpialidocioussay"
