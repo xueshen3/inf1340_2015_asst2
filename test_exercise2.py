@@ -72,7 +72,12 @@ def test_advanced_multi_find_basic():
 
 def test_multi_find_invalid_substring():
 
-    #Test if the substring is not in the input_string
+    #Test if the substring is not in the input_string.
 
     assert multi_find("Ni! Ni! Ni! Ni!", "Ha", 0, 15) == ""
 
+def test_num_string():
+    
+    # Test if the substring will return a string integer.
+
+    assert multi_find("Address: 22 Street, Apt. 412, Area Code(212)", "2", 0, 44) == "9,10,27,40,42"
