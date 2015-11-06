@@ -13,9 +13,18 @@ __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
 # we first define a few table for testing purpose
-GRADUATES = [["Number", "Surname", "Age"],[7274, "Robinson", 37],[7432, "O'Malley", 39],[9824, "Darkes", 38]]
-GRADUATES1 = [["Number", "Surname", "Age"],[7474, "Robinson", 37],[7432, "O'Malley", 39],[9824, "Darkes", 38]]
-GRADUATES2 = [["Number", "Surname", "Age"],[7474, "Robinson", 37],[7432, "O'Malley", 39],[9824, "Reilly", 38]]
+GRADUATES = [["Number", "Surname", "Age"],
+             [7274, "Robinson", 37],
+             [7432, "O'Malley", 39],
+             [9824, "Darkes", 38]]
+GRADUATES1 = [["Number", "Surname", "Age"],
+              [7474, "Robinson", 37],
+              [7432, "O'Malley", 39],
+              [9824, "Darkes", 38]]
+GRADUATES2 = [["Number", "Surname", "Age"],
+              [7474, "Robinson", 37],
+              [7432, "O'Malley", 39],
+              [9824, "Reilly", 38]]
 
 def union(table1, table2):
     """
@@ -42,7 +51,6 @@ def union(table1, table2):
     # raise the MismatchedAttributes Exception error
     else:
         raise MismatchedAttributesException
-
     return []
 
 
@@ -82,7 +90,7 @@ def difference(table1, table2):
         return new_list
     # raise the MismatchedAttributes Exception error
     else:
-            raise MismatchedAttributesException
+        raise MismatchedAttributesException
     return []
 
 ########################
