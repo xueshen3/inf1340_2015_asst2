@@ -16,8 +16,8 @@ def find(input_string, substring, start, end):
     """
     The application of input string, allowing the user to find the location of the substring in the input_string.
     The function would use a for loop to do letter by letter comparison that behave exactly like a string function.
-    :Param:The input_string and the substring where users want to find in the input_string, along with the range in input_string:
-    :return:The user will get the location of the substring in the form of index.
+    :param:"input_string", "substring", "start", "end"
+    :return:The user will get the location of the substring in integer indices.
     """
     # define the string equal to the input_string with slicing from start to the end
     string = input_string[start:]
@@ -32,11 +32,10 @@ def find(input_string, substring, start, end):
     else:
         return -1
 
-print(find("characteristic","ara", 0, -1))
 
 def multi_find(input_string, substring, start, end):
     """
-    The application of multi string function, the function allow users to find all the location where substring is found
+    Instead of returning one integer index, returns a string with zero or more indices separated by commas
     :The input_string, substring, and the range of the function in the input_string eg("aaadgda", "dgd", 0, 6) :
     :It shall return the indexes of the substring in the input string, eg( 3):
 
@@ -65,5 +64,4 @@ def multi_find(input_string, substring, start, end):
         return_str = return_str[1:]
     return return_str[1:]
 
-print(multi_find("school", "o", 0, 5))
 
