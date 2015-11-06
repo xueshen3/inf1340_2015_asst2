@@ -12,7 +12,7 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
-# we first define a few table for testing purpose
+# We first define a few table for testing purpose.
 GRADUATES = [["Number", "Surname", "Age"],
              [7274, "Robinson", 37],
              [7432, "O'Malley", 39],
