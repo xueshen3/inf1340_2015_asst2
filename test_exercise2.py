@@ -20,6 +20,7 @@ def test_find_basic():
     """
     assert find("This is an ex-parrot", "parrot", 0, 20) == 14
 
+
 def test_advanced_find_basic():
     """
     Test the find function that will do the same as the find.string method with for loop
@@ -29,15 +30,17 @@ def test_advanced_find_basic():
     # A special situation where the end index is negative number
     assert find("dominating","min", 0, -1) == 2
 
-    # A special siutation where substring is identical as input_string
+    # A special situation where substring is identical as input_string
 
     assert find("homework","homework", 0, 8) == 0
+
 
 def test_multi_find_basic():
     """
     Test multi_find function.
     """
     assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 15) == "0,4,8,12"
+
 
 def test_advanced_multi_find_basic():
     """
@@ -53,9 +56,17 @@ def test_advanced_multi_find_basic():
 
     assert multi_find("assignment", "assignment", 0, 9) == '0'
 
-def test_multi_find_invaild_substring():
+
+def test_multi_find_invalid_substring():
     """
     Test if the substring is not in the input_string
     :return: The function should return the user a empty string
     """
     assert multi_find("Ni! Ni! Ni! Ni!", "Ha", 0, 15) == ""
+
+
+def test_number_string():
+    """
+    Test if it will find strings that are numbers in a sentence.
+    """
+    assert multi_find("Address: 22 Street, Apt. 412, Area Code(212)","2", 0, 44) == "9,10,27,40,42"
