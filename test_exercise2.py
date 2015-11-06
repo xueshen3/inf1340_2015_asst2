@@ -20,6 +20,12 @@ def test_find_basic():
     """
     assert find("This is an ex-parrot", "parrot", 0, 20) == 14
 
+def test_multi_find_basic():
+    """
+    Test multi_find function.
+    """
+    assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 15) == "0,4,8,12"
+
 def test_advanced_find_basic():
     """
     Test the find function with more extraordinary situation
@@ -40,12 +46,6 @@ def test_advanced_find_basic():
     # Test when the end index is out of range
 
     assert find("honey","ney", 0, 15) == 2
-
-def test_multi_find_basic():
-    """
-    Test multi_find function.
-    """
-    assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 15) == "0,4,8,12"
 
 def test_advanced_multi_find_basic():
     """
@@ -70,11 +70,30 @@ def test_advanced_multi_find_basic():
 
     assert multi_find("winterwinterwinter", "ter", 12, 17) == "15"
 
+def test_find_invalid_substring():
+
+    #Test if the substring is not in the input_string
+
+    assert find("homogeneous","bob", 0, 12) == -1
+
+    assert find("identification","low", 0, 22) == -1
+
+    assert find("service_department","man", 0, 12) == -1
+
+    assert find("fire_work","ide", 0, 10) == -1
+
+
 def test_multi_find_invalid_substring():
 
     #Test if the substring is not in the input_string.
 
     assert multi_find("Ni! Ni! Ni! Ni!", "Ha", 0, 15) == ""
+
+    assert multi_find("Halloween", "kee", 0, 9) == ""
+
+    assert multi_find("Toronto_Pearson_Airport", "go", 0, 31) == ""
+
+    assert multi_find("loading_message","lol", 0, 15) == ""
 
 def test_num_string():
     

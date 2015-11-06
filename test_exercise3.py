@@ -13,7 +13,6 @@ __license__ = "MIT License"
 
 from exercise3 import union, intersection, difference, MismatchedAttributesException
 
-
 ###########
 # TABLES ##
 ###########
@@ -27,15 +26,34 @@ MANAGERS = [["Number", "Surname", "Age"],
             [7432, "O'Malley", 39],
             [9824, "Darkes", 38]]
 
+######################
+# Additional TABLES ##
+######################
 #Additinoal table generated for testing purpose
-LIST1 = [["Name", "Sex", "ID"], ["Terry", "Male", 0755], ["Jessica", "Female", 8863], ["Frank","Male", 1103]]
-LIST2 = [["Name", "Sex", "ID"], ["Terry", "Male", 0755], ["Nana", "Female", 7766], ["Jowell", "Male", 6688]]
+LIST1 = [["Name", "Sex", "ID"],
+         ["Terry", "Male", 0755],
+         ["Jessica", "Female", 8863],
+         ["Frank","Male", 1103]]
+LIST2 = [["Name", "Sex", "ID"],
+         ["Terry", "Male", 0755],
+         ["Nana", "Female", 7766],
+         ["Jowell", "Male", 6688]]
 # the table with different schema from other tables
-LIST3 = [["Gender", "Age", "ID"],["Male", 23, 1234], ["Female", 44, 9976], ["Male", 32, 8765]]
+LIST3 = [["Gender", "Age", "ID"],
+         ["Male", 23, 1234],
+         ["Female", 44, 9976],
+         ["Male", 32, 8765]]
 # this is a table identical with LIST1
-LIST4 = [["Name", "Sex", "ID"], ["Terry", "Male", 0755], ["Jessica", "Female", 8863], ["Frank","Male", 1103]]
+LIST4 = [["Name", "Sex", "ID"],
+         ["Terry", "Male", 0755],
+         ["Jessica", "Female", 8863],
+         ["Frank","Male", 1103]]
 # this is a table with no intersection to LIST2
-LIST5 = [["Name", "Sex", "ID"], ["Karen", "Female", 3188], ["Jessica", "Female", 8863], ["Frank","Male", 1103]]
+LIST5 = [["Name", "Sex", "ID"],
+         ["Karen", "Female", 3188],
+         ["Jessica", "Female", 8863],
+         ["Frank","Male", 1103]]
+
 #####################
 # HELPER FUNCTIONS ##
 #####################
@@ -50,7 +68,6 @@ def test_union():
     """
     Test union operation.
     """
-
     result = [["Number", "Surname", "Age"],
               [7274, "Robinson", 37],
               [9297, "O'Malley", 56],
@@ -58,6 +75,30 @@ def test_union():
               [9824, "Darkes", 38]]
 
     assert is_equal(result, union(GRADUATES, MANAGERS))
+
+def test_intersection():
+    """
+    Test intersection operation.
+    """
+    result = [["Number", "Surname", "Age"],
+              [7432, "O'Malley", 39],
+              [9824, "Darkes", 38]]
+
+    assert is_equal(result, intersection(GRADUATES, MANAGERS))
+
+def test_difference():
+    """
+    Test difference operation.
+    """
+    result = [["Number", "Surname", "Age"],
+              [7274, "Robinson", 37]]
+
+    assert is_equal(result, difference(GRADUATES, MANAGERS))
+
+
+#######################################
+# TEST Additional Advanced FUNCTIONS ##
+#######################################
 
 def test_advanced_union():
     # Test the union function by comparing the additional tables generated
@@ -76,16 +117,6 @@ def test_advanced_union():
               ["Frank","Male", 1103]]
     assert is_equal(result, union(LIST1, LIST4))
 
-def test_intersection():
-    """
-    Test intersection operation.
-    """
-    result = [["Number", "Surname", "Age"],
-              [7432, "O'Malley", 39],
-              [9824, "Darkes", 38]]
-
-    assert is_equal(result, intersection(GRADUATES, MANAGERS))
-
 def test_advanced_intersection():
     # Test the intersection function by comparing the additional tables generated
     result = [["Name", "Sex", "ID"],["Terry", "Male", 0755]]
@@ -96,15 +127,6 @@ def test_advanced_intersection():
     result = [["Name", "Sex", "ID"]]
     assert is_equal(result, intersection(LIST2, LIST5))
 
-def test_difference():
-    """
-    Test difference operation.
-    """
-
-    result = [["Number", "Surname", "Age"],
-              [7274, "Robinson", 37]]
-
-    assert is_equal(result, difference(GRADUATES, MANAGERS))
 
 def test_advanced_difference():
     # Test the difference function by comparing the additional tables generated
