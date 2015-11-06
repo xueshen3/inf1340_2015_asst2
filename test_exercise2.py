@@ -96,7 +96,7 @@ def test_multi_find_invalid_substring():
     assert multi_find("loading_message","lol", 0, 15) == ""
 
 def test_num_string():
-    
+
     # Test if the substring will return a string integer.
 
     assert multi_find("Address: 22 Street, Apt. 412, Area Code(212)", "2", 0, 44) == "9,10,27,40,42"
