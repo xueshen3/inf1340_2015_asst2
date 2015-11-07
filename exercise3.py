@@ -74,7 +74,11 @@ def intersection(table1, table2):
             # If the value is in table1 and also in table2, input the shared value into new_list.
             if element in table2:
                 new_list.append(element)
+        # if there is no intersection between two tables, remove the header from new_list
+        if len(new_list) <= 1:
+            new_list.remove(table1[0])
         return new_list
+
     # Raise the MismatchedAttributes Exception error if schemas don't match
     else:
         raise MismatchedAttributesException
@@ -99,6 +103,9 @@ def difference(table1, table2):
             # If the value in table 1 is not in table2, we put it into the new_list.
             if element not in table2:
                 new_list.append(element)
+        # If there are no difference between two tables, remove the header from new_list
+        if len(new_list) <= 1:
+            new_list.remove(table1[0])
         return new_list
     # Raise the MismatchedAttributes Exception error if schemas don't match
     else:

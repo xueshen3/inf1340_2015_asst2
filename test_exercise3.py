@@ -118,36 +118,22 @@ def test_advanced_union():
               ["Frank","Male", 1103]]
     assert is_equal(result, union(LIST1, LIST4))
 
-def test_intersection():
-    """
-    Test intersection operation.
-    """
-    result = [["Number", "Surname", "Age"],
-              [7432, "O'Malley", 39],
-              [9824, "Darkes", 38]]
-
-    assert is_equal(result, intersection(GRADUATES, MANAGERS))
 
 def test_advanced_intersection():
     # Test the intersection function by comparing the additional tables generated.
     result = [["Name", "Sex", "ID"], ["Terry", "Male", 0755]]
 
     assert is_equal(result, intersection(LIST1, LIST2))
-
     # A special situation where there are no intersection between two tables.
-    result = [["Name", "Sex", "ID"]]
+    result = []
     assert is_equal(result, intersection(LIST2, LIST5))
 
-def test_difference():
-    """
-    Test difference operation.
-    """
-
-    result = [["Number", "Surname", "Age"],
-              [7274, "Robinson", 37]]
-
-    assert is_equal(result, difference(GRADUATES, MANAGERS))
-
+    # Test when two tables are identical
+    result = [["Name", "Sex", "ID"],
+              ["Terry", "Male", 0755],
+              ["Jessica", "Female", 8863],
+              ["Frank","Male", 1103]]
+    assert is_equal(result, intersection(LIST1, LIST4))
 
 def test_advanced_difference():
     # Test the difference function by comparing the additional tables generated.
@@ -158,7 +144,7 @@ def test_advanced_difference():
     assert is_equal(result, difference(LIST1, LIST2))
 
     # A special situation where two tables are completely identical.
-    result = [["Name", "Sex", "ID"]]
+    result = []
     assert is_equal(result, difference(LIST1, LIST4))
 
     # A special situation where there are no intersection between two tables.
